@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
+import Canvas from './Canvas'
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  
+      let [color,setColor]=useState("blue")
+      
+
+      function redColor(){
+         setColor("red")
+     }
+ 
+     function blueColor(){
+       setColor("blue")
+     }
+ 
+     function yellowColor(){
+       setColor("yellow")
+     }
+     function greenColor(){
+       setColor("green")
+     }
+
+    
+
+   
+   return (
+     <div className="App">
+       <div className="color" >
+         
+             <div type="button"  className="red" onClick={redColor} ></div>
+             <div type="button"  className="green" onClick={greenColor} ></div>
+             <div type="button"  className="yellow" onClick={yellowColor} ></div>
+             <div type="button"  className="blue" onClick={blueColor}></div>
+             
+       </div>
+       <Canvas color={color}>
+       
+       </Canvas>
+       
     </div>
   );
 }
